@@ -37,9 +37,9 @@
     }
 
     const closeModalDuringOneday = () => {
-        let date = new Date(Date.now() + 86400e3);
+        let date = new Date(Date.now() + 86400);
         date = date.toUTCString();
-        document.cookie = `bannerClose=T; expires=${date}`
+        document.cookie = `bannerClose=T, expires=${date}`
         closeModal();
     }
 
