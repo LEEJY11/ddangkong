@@ -24,6 +24,8 @@
         .banner-footer {color:#fff;width:100%;display:flex;align-items:center;justify-content:flex-end;padding:5px;gap:15px;}
         .banner-footer li {margin-bottom:0;cursor:pointer;}
         .banner-footer li > span {border:1px solid #fff;display:inline-block;width:20px;font-size:12px;margin-right:5px;}
+
+        .display-flex {display:flex;}
 </style>
 <script type="text/javascript">
     const getCookie = (name) => {
@@ -44,10 +46,11 @@
     }
 
     function setBanner (){
-        if (getCookie('bannerClose')) {
+        const banner = document.getElementById('banner');
+        if (getCookie('bannerClose') == null) {
+            banner.className += " display-flex";
+        } else if(getCookie("bannerClose") == "T") {
             closeModal();
-        } else {
-            document.getElementById("banner").style.display = "flex;"
         };
     }
 </script>
